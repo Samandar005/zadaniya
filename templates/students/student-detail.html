@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ students.title }}</title>
+
+
+    <style>
+        tbody,th, td{
+            border: 1px solid black;
+
+        }
+    </style>
+
+</head>
+<body>
+    <h1>{{ students.first_name }} {{ students.last_name }}</h1>
+    <table style="border: 1px solid">
+    <thead >
+        <tr>
+            <th>ID</th>
+            <th>Email</th>
+            <th>Date of Birth</th>
+            <th>Gender</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+      <tbody class="matn">
+            <tr>
+                <td>{{ students.id }}</td>
+                <td>{{ students.email }}</td>
+                <td>{{ students.data_birth }}</td>
+                <td>{{ students.gender }}</td>
+                <td>{{ students.address }}</td>
+                <br><br>
+            </tr>
+      </tbody>
+    </table>
+    <br>
+    <button><a href="{% url 'students:student_delete' pk=students.pk %}">Delete</a></button><br><br>
+    <button><a href="{% url 'students:student_list' %}">Back to list</a></button>
+    <br>
+</body>
+</html>

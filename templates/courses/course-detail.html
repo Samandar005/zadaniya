@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ courses.title }}</title>
+
+
+    <style>
+        tbody,th, td{
+            border: 1px solid black;
+
+        }
+    </style>
+
+</head>
+<body>
+    <h1>{{ courses.name }}</h1>
+    <table style="border: 1px solid">
+    <thead >
+        <tr>
+            <th>ID</th>
+            <th>Description</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Max Student</th>
+        </tr>
+    </thead>
+      <tbody class="matn">
+            <tr>
+                <td>{{ courses.id }}</td>
+                <td>{{ courses.description }}</td>
+                <td>{{ courses.start_date }}</td>
+                <td>{{ courses.end_date }}</td>
+                <td>{{ courses.max_student }}</td>
+                <br><br>
+            </tr>
+      </tbody>
+    </table>
+    <br>
+    <button><a href="{% url 'courses:course_delete' pk=courses.pk %}">Delete</a></button><br><br>
+    <button><a href="{% url 'courses:course_list' %}">Back to list</a></button>
+    <br>
+</body>
+</html>

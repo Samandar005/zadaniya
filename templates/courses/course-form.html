@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Course Management</title>
+</head>
+<body>
+    <h1>Course Management</h1><br>
+    <h3>Create New Course</h3><br>
+    <form method="post">
+    {% csrf_token %}
+    <label for="name">Title:</label><br>
+    <input type="text" name="name" id="name" required><br><br>
+
+    <label for="description">Description:</label><br>
+    <textarea name="description" id="description" required></textarea><br><br>
+
+    <label for="start_date">Start Date:</label><br>
+    <input type="date" name="start_date" id="start_date" required><br><br>
+
+    <label for="end_date">End Date:</label><br>
+    <input type="date" name="end_date" id="end_date" required><br><br>
+
+    <label for="max_student">Max Students:</label><br>
+    <input type="number" name="max_student" id="max_student" required><br><br>
+
+    <button type="submit">Create Course</button>
+        <br><br>
+</form>
+
+        <button><a href="{% url 'home' %}">HOME</a></button><br><br>
+
+        <button><a href="{% url 'courses:course_list' %}">Back to List</a></button>
+
+    </form>
+</body>
+</html>

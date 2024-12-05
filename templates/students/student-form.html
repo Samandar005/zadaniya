@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Management</title>
+</head>
+<body>
+    <h1>Student Management</h1><br>
+    <h3>Create New Student</h3><br>
+    <form method="post">
+        {% csrf_token %}
+        <label for="first_name">First Name:</label><br>
+        <input type="text" id="first_name" name="first_name"><br><br>
+
+        <label for="last_name">Last Name:</label><br>
+        <input type="text" id="last_name" name="last_name"><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="text" id="email" name="email"><br><br>
+
+        <label for="data_birth">Data of Birth:</label><br>
+        <input type="date" id="data_birth" name="data_birth"><br><br>
+
+         <label for="gender">Gender:<br>
+             <select name="gender" id="gender">
+                 <option value="male">Male</option>
+                 <option value="femal">Female</option>
+             </select>
+         </label><br><br>
+        <label for="address">Adderss:</label><br>
+        <textarea name="address" id="address"></textarea><br><br>
+
+        <input type="submit" value="Create Student"><br><br>
+
+        <button><a href="{% url 'home' %}">HOME</a></button><br><br>
+
+        <button><a href="{% url 'students:student_list' %}">Back to List</a></button>
+
+    </form>
+</body>
+</html>
